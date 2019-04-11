@@ -59,7 +59,11 @@ class SudokuGame
   end
 
   def commence_proceedings
-    process_parameters until board_process_terminates?
+    board.render
+    until board_process_terminates?
+      process_parameters
+      board.render
+    end
     puts "Congratulations, you win!"
   end
 
